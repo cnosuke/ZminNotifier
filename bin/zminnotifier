@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+require 'zminnotifier'
+
+timer = ZminNotifier::Timer.new
+
+min = ARGV.first || 0
+min = min.to_i
+timer.run(min)

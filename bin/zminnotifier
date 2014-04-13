@@ -1,8 +1,9 @@
 #!/usr/bin/env ruby
 require 'zminnotifier'
 
+Process.daemon(nochdir=true) if ARGV[1] == "-D"
 timer = ZminNotifier::Timer.new
 
-min = ARGV.first || 0
+min = ARGV[0] || 0
 min = min.to_i
 timer.run(min)
